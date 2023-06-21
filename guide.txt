@@ -1,0 +1,26 @@
+Java developer requirement Assignment:(MVC Architecture)
+--------------------------------------
+Database creation:
+   * Create a Table to store category code and its value.
+   * Give the database configuration details in the application.properties file in the spring boot application.
+   * Like database url,username,password to configure.
+Rest Api:
+   * 'http://localhost:8080/FetchNextNumber/ ' This Api provides the services of fetching next number with the
+     requirement of sum of digits will lead to 1.
+   * We have to send parameter as json format along with url.
+     {
+       "CategoryCode": ""
+     }
+   * Spring rest used to create rest api.
+   * It returns the jsonObject format like,
+     {
+       "OldValue": "",
+       "NewValue": ""
+     }
+Features implemented:
+   * Connecting to a database using spring data jpa(It internally uses spring orm->hibernate orm->plain jdbc)
+   * Retrieving the current value from the database based on the CategoryCode.
+   * Calculating the next number that meets the specified criteria.
+   * Introducing a 5-second delay during number calculation.
+   * Updating the database with the new number.
+   * Returning the OldValue and NewValue as a JsonObject in a JSON response.

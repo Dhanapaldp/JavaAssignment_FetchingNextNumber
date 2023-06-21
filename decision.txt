@@ -1,0 +1,31 @@
+Design/Architectural of Fetching next number:
+---------------------------------------------
+1. Model-View-Controller (MVC) Architecture:
+   - The application follows the MVC architectural pattern to separate concerns and improve maintainability.
+   - Model: Represents the data and database operations.
+   - View:  Not applicable,Beacause it is about rest api.The url explore the services of fetching next number and gives as an json format in the response body.
+   - Controller: Handles the application logic and acts as an interface between the model and view.
+
+2. Database Interaction:
+   - Spring Data jpa (It internally uses spring orm->hibernate orm->plain jdbc) is used to establish a connection with the database.
+   - Crud repository(pre defined repository) is used to perform the peristence operations.
+   - There is no implementation class for the repository,by default inmemory proxy class will give the implementation for the repository to perform crud operation methods
+
+3. Error Handling:
+   - Exceptions are caught and given as a response in the format of json in response body by default error handler for debugging purposes.
+   - Checked Exceptions like interrupted exception handled in our code to compile the logic.
+
+4. JSON Serialization/Deserialization:
+   - Spring rest will give the abstraction on converting Java objects to JSON and vice versa.
+
+6. Code Organization:
+   - The application is organized into separate classes for better maintainability and readability.
+   - The main logic is contained in the FetchNextNumberService class, while database-related operations are encapsulated in separate methods.
+
+7. Sleep/Delay Mechanism:
+   - Thread.sleep() is used to introduce a 5-second delay during the number calculation process.
+   - This simulates other processing activities and ensures the overall delay.
+
+8. Compilation and Execution:
+   - The application is compiled and executed using the Java Development Kit (JDK).
+   - It assumes the necessary dependencies and libraries are properly configured in the pom.xml file.
